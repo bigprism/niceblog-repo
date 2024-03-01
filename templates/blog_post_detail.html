@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ blog_post.title }}</h1>
+<p>{{ blog_post.content }}</p>
+<p>Author: {{ blog_post.author }}</p>
+<p>Publish Date: {{ blog_post.publish_date }}</p>
+<p>Tags: {% for tag in blog_post.tags.all %}{{ tag.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+{% endblock %}
